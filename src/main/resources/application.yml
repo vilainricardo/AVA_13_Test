@@ -1,0 +1,5 @@
+
+security:
+  jwt:
+    secret-base64: ${JWT_SECRET_BASE64}   # resolves from environment variable
+    expiration-min: 60
