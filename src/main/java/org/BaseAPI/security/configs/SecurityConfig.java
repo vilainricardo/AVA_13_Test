@@ -37,13 +37,14 @@ public class SecurityConfig {
 
 
                         // Role-protected endpoints:
-                        .requestMatchers("/user/add").permitAll()
+                        .requestMatchers("/user/**").permitAll()
+                        //.requestMatchers("/user/add").permitAll()
                         .requestMatchers("/public/**", "/health", "/auth/login").permitAll()
-                        .requestMatchers("/user/**").hasAnyRole(SecurityRoles.ADMIN.name(), SecurityRoles.BASIC.name()) // requires ROLE_ADMIN or ROLE_BASIC
+                        //.requestMatchers("/user/**").hasAnyRole(SecurityRoles.ADMIN.name(), SecurityRoles.BASIC.name()) // requires ROLE_ADMIN or ROLE_BASIC
 
                         // Public endpoints:
                         // Everything else must be authenticated:
-                        .anyRequest().authenticated()
+                        //.anyRequest().authenticated()
 
                 )
                 // Your JWT filter runs before UsernamePasswordAuthenticationFilter

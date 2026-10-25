@@ -8,12 +8,11 @@ import org.BaseAPI.constants.SecurityRoles;
 import org.BaseAPI.erros.exceptions.ExpiredSessionException;
 import org.BaseAPI.erros.exceptions.ResourceNotFoundException;
 import org.BaseAPI.security.model.LoginResposeDTO;
-import org.BaseAPI.generalHub.module.User;
-import org.BaseAPI.generalHub.service.UserService;
+import org.BaseAPI.commons.users.entity.User;
+import org.BaseAPI.commons.users.service.UserService;
 import org.BaseAPI.security.model.RefreshToken;
 import org.BaseAPI.security.repository.RefreshTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;

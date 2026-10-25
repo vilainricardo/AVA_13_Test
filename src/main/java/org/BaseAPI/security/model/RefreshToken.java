@@ -3,7 +3,7 @@ package org.BaseAPI.security.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.BaseAPI.generalHub.module.User;
+import org.BaseAPI.commons.users.entity.User;
 import org.BaseAPI.utils.UUID.UUIDHandler;
 
 import java.util.Date;

@@ -1,14 +1,12 @@
-package org.BaseAPI.generalHub.dto.user;
+package org.BaseAPI.commons.users.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 import org.BaseAPI.constants.UIRoles;
-import org.BaseAPI.generalHub.dto.BaseDTO;
-import org.BaseAPI.generalHub.module.User;
+import org.BaseAPI.commons.users.entity.User;
 import org.BaseAPI.utils.ReflectionMapper;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Set;
 
 @Getter

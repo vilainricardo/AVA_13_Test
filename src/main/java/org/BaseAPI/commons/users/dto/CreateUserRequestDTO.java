@@ -1,4 +1,4 @@
-package org.BaseAPI.generalHub.dto.user;
+package org.BaseAPI.commons.users.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.Email;
@@ -7,12 +7,10 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
-import org.BaseAPI.generalHub.dto.BaseDTO;
-import org.BaseAPI.generalHub.module.User;
+import org.BaseAPI.commons.users.entity.User;
 import org.BaseAPI.utils.ReflectionMapper;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Getter
 @Setter

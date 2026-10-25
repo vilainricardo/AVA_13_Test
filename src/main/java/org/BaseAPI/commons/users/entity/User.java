@@ -1,4 +1,4 @@
-package org.BaseAPI.generalHub.module;
+package org.BaseAPI.commons.users.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -6,9 +6,11 @@ import lombok.Getter;
 import lombok.Setter;
 import org.BaseAPI.constants.SecurityRoles;
 import org.BaseAPI.constants.UIRoles;
-import org.BaseAPI.generalHub.dto.user.UserDTO;
+import org.BaseAPI.commons.users.dto.UserDTO;
 import org.BaseAPI.utils.ReflectionMapper;
 import org.BaseAPI.utils.UUID.UUIDHandler;
+import org.hibernate.annotations.UuidGenerator;
+import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -17,12 +19,15 @@ import java.util.Set;
 @Table(name = "users")
 @Getter
 @Setter
-public class User implements BaseModel<UserDTO> {
+public class User implements BaseEntity<UserDTO> {
 
     @Id
-    @NotBlank
-    @Column(nullable = false)
-    private String uuid = UUIDHandler.generateId();
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @GeneratedValue(generator = "uuid")
+    @UuidGenerator()
+    private String uuid;
     @NotBlank
     @Column(nullable = false)
     private String firstName;
@@ -35,7 +40,7 @@ public class User implements BaseModel<UserDTO> {
     @NotBlank
     @Column(nullable = false)
     private String password;
-    @NotBlank
+
     @Column(nullable = false)
     private LocalDate birthDay;
 

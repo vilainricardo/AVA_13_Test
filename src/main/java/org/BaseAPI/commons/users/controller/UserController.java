@@ -1,10 +1,12 @@
-package org.BaseAPI.generalHub.controller;
+package org.BaseAPI.commons.users.controller;
 
 import jakarta.validation.Valid;
+import org.BaseAPI.commons.users.entity.UserHumor;
+import org.BaseAPI.constants.Humors;
 import org.BaseAPI.constants.UIRoles;
-import org.BaseAPI.generalHub.dto.user.UserDTO;
-import org.BaseAPI.generalHub.dto.user.CreateUserRequestDTO;
-import org.BaseAPI.generalHub.service.UserService;
+import org.BaseAPI.commons.users.dto.UserDTO;
+import org.BaseAPI.commons.users.dto.CreateUserRequestDTO;
+import org.BaseAPI.commons.users.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,11 +22,10 @@ public class UserController {
         return userService.add(createUserRequestDTO);
     }
 
-    @GetMapping("/user/{id}")
-    public UserDTO getUser(@PathVariable String id) {
-        return userService.findById(id);
+    @PostMapping("/user/add")
+    public UserDTO add(@Valid @RequestBody CreateUserRequestDTO createUserRequestDTO) {
+        return userService.add(createUserRequestDTO);
     }
-
     @GetMapping("/user/get-all")
     public List<UserDTO> getUser() {
         return userService.getAll();
@@ -34,6 +35,11 @@ public class UserController {
     @PostMapping("/user/add-roles/{id}")
     public UserDTO addRoles(@RequestBody UIRoles[] roles, @PathVariable String id) {
         return userService.addUIRoles(roles, id);
+    }
+
+    @PostMapping("/user/add-humor/{userId}/{humor}")
+    public UserHumor addHumor(@PathVariable String userId, Humors humor) throws Exception {
+        return userService.addUserHumor(userId, humor);
     }
 
 }

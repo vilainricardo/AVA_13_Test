@@ -1,6 +1,6 @@
-package org.BaseAPI.generalHub.repository;
+package org.BaseAPI.commons.users.repository;
 
-import org.BaseAPI.generalHub.module.User;
+import org.BaseAPI.commons.users.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

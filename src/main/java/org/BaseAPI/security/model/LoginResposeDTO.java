@@ -2,7 +2,7 @@ package org.BaseAPI.security.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.BaseAPI.generalHub.dto.user.UserDTO;
+import org.BaseAPI.commons.users.dto.UserDTO;
 
 @Getter
 @Setter
